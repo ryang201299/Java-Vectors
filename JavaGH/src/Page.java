@@ -1,8 +1,8 @@
 public class Page {
     String pageName;
-    double followers;
+    String followers;
 
-    Page(String newName, double newFollowers) {
+    Page(String newName, String newFollowers) {
         pageName = newName;
         followers = newFollowers;
     }

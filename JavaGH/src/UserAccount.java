@@ -4,15 +4,25 @@ public class UserAccount {
     String userName;
     Vector<Page> followedPages = new Vector<>();
 
-    public static void followAccount(Page page) {
-        // add new page to followed accounts vector
+    public UserAccount(String newName) {
+        userName = newName;
     }
 
-    public static void unfollowAccount(Page page) {
-        // remove page from followed accounts vector
+    public void followAccount(Page page) {
+        followedPages.add(page);
     }
 
-    public static void outputFollowedAccounts() {
-        // output followed accounts
+    public void unfollowAccount(Page page) {
+        followedPages.removeElement(page);
+    }
+
+    public void outputFollowedAccounts() {
+        System.out.print("\n" + userName + " followed accounts: ");
+        for (int i = 0; i < followedPages.size(); i++) {
+            if (i != 0) {
+                System.out.print(", ");
+            }
+            System.out.print(followedPages.get(i).pageName);
+        }
     }
 }
